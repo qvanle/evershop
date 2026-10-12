@@ -33,7 +33,8 @@ COPY . .
 # Project directories that are not tracked in git but that the app expects to
 # exist: media/ for uploads, public/ for static files, themes/ and extensions/
 # for add-ons, config/ for node-config.
-RUN mkdir -p config themes extensions public media
+RUN mkdir -p config themes extensions public media \
+  && cp -r assets/. public/
 
 # compile: TypeScript src -> dist via swc (what `build` and `start` execute).
 # build:   webpack bundles for the storefront and admin.

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <!-- Một cánh hoa xuyến chi: thuôn dài, đầu cánh xẻ 3 thùy -->
+    <path id="petal" d="M -6,-20
+      C -28,-36 -32,-66 -24,-78
+      Q -17,-88 -9,-80
+      Q 0,-93 9,-80
+      Q 17,-88 24,-78
+      C 32,-66 28,-36 6,-20 Z"/>
+  </defs>
+
+  <rect width="1000" height="1000" fill="#ffffff"/>
+
+  <g fill="#ffffff" stroke="#000000" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Brim -->
+    <path d="M265,487 C190,515 110,550 82,575 C60,600 160,650 300,665 C360,672 400,668 420,664 C520,690 610,700 690,700 C790,700 860,650 890,590 C905,565 840,545 700,515"/>
+    <!-- Brim fold on the left -->
+    <path d="M82,577 C220,555 330,610 420,664" fill="none"/>
+    <!-- Crown -->
+    <path d="M265,487 C290,330 380,268 480,268 C590,268 670,340 700,515 Q480,545 265,487 Z"/>
+    <!-- Hat band line -->
+    <path d="M275,443 Q480,490 683,443" fill="none"/>
+  </g>
+
+  <!-- Hoa xuyến chi lớn thay cho nơ ruy băng, nằm trên băng mũ phía bên phải -->
+  <g transform="translate(675,465) rotate(-10) scale(1.25)" stroke="#000000" stroke-linecap="round" stroke-linejoin="round">
+    <g fill="#ffffff" stroke-width="9.6">
+      <use href="#petal" transform="rotate(0)"/>
+      <use href="#petal" transform="rotate(70) scale(0.96)"/>
+      <use href="#petal" transform="rotate(145) scale(1.02)"/>
+      <use href="#petal" transform="rotate(215) scale(0.98)"/>
+      <use href="#petal" transform="rotate(290)"/>
+    </g>
+    <g fill="none" stroke-width="4">
+      <path d="M0,-32 L0,-62" transform="rotate(0)"/>
+      <path d="M0,-32 L0,-59" transform="rotate(70)"/>
+      <path d="M0,-32 L0,-63" transform="rotate(145)"/>
+      <path d="M0,-32 L0,-60" transform="rotate(215)"/>
+      <path d="M0,-32 L0,-62" transform="rotate(290)"/>
+    </g>
+    <!-- Nhụy vàng -->
+    <circle r="24" fill="#F2C230" stroke-width="9.6"/>
+    <g fill="#000000" stroke="none">
+      <circle cx="0" cy="-9" r="2.8"/>
+      <circle cx="8.5" cy="-2.8" r="2.8"/>
+      <circle cx="5.3" cy="7.3" r="2.8"/>
+      <circle cx="-5.3" cy="7.3" r="2.8"/>
+      <circle cx="-8.5" cy="-2.8" r="2.8"/>
+      <circle cx="0" cy="0" r="2.8"/>
+    </g>
+  </g>
+</svg>
