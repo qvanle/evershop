@@ -11,9 +11,9 @@ export function Header() {
         isGlobal
         editableInPageBuilder
       />
-      {/* Re-skin (2026-07-10): reference layout — logo left, nav beside it,
-          search / account / cart pushed right, constrained to the page width. */}
-      <div className="header__middle page-width flex items-center gap-6 py-6">
+      {/* Three columns: logo on the left edge, menu centered, search / account /
+          cart on the right edge, constrained to the page width. */}
+      <div className="header__middle page-width grid grid-cols-[1fr_auto_1fr] items-center gap-6 py-3.5">
         <Area
           id="headerMiddleLeft"
           className="header__middle__left flex justify-start items-center"

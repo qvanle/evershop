@@ -7,7 +7,7 @@ import { pool } from '../../lib/postgres/connection.js';
  * Seed storefront widgets so a freshly seeded store renders a REAL
  * storefront instead of an empty shell:
  *
- *  - "Demo Main Menu" (basic_menu) on `headerMiddleLeft`, route `all`:
+ *  - "Demo Main Menu" (basic_menu) on `headerMiddleCenter`, route `all`:
  *    one link per TOP-LEVEL category read from the database at seed time
  *    (the category set comes partly from categories.json and partly from
  *    the product seeder, so the DB is the only honest source), plus a
@@ -92,7 +92,7 @@ export async function seedWidgets(): Promise<void> {
       MENU_WIDGET_NAME,
       'basic_menu',
       { menus, isMain: true },
-      { route: 'all', area: 'headerMiddleLeft', sortOrder: 1 }
+      { route: 'all', area: 'headerMiddleCenter', sortOrder: 1 }
     );
     success(
       `"${MENU_WIDGET_NAME}" created (${menus.length - 1} categories + Blog)`

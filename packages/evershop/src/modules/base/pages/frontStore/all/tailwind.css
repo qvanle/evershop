@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap&subset=vietnamese');
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 @import 'tw-animate-css';
@@ -7,6 +8,11 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-accent-text: var(--accent-text);
+  --color-success: var(--success);
+  --font-serif: var(--font-serif);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
@@ -50,43 +56,51 @@
 }
 
 :root {
-  --radius: 0.325rem;
-  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
-    Helvetica, Arial, sans-serif;
+  --radius: 0.5rem;
+  --font-sans: 'Be Vietnam Pro', ui-sans-serif, system-ui, -apple-system,
+    'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas,
     monospace;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --divider: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* Xuyến Chi palette — base paper #F4EFE2, ink #2B2620, flower-yellow accent. */
+  --background: #F4EFE2;
+  --foreground: #2B2620;
+  --card: #FBF8F1;
+  --card-foreground: #2B2620;
+  --popover: #FBF8F1;
+  --popover-foreground: #2B2620;
+  --primary: #2B2620;
+  --primary-foreground: #F4EFE2;
+  --secondary: #EAE3D2;
+  --secondary-foreground: #2B2620;
+  --muted: #EAE3D2;
+  --muted-foreground: #6E6556;
+  /* shadcn `accent` is the hover surface, so it stays a warm neutral; the
+   * flower yellow lives in `brand` (fills only) and `accent-text` (readable). */
+  --accent: #EAE3D2;
+  --accent-foreground: #2B2620;
+  --brand: #D9A82E;
+  --brand-foreground: #2B2620;
+  --accent-text: #8A6410;
+  --success: #5B6B3F;
+  --destructive: #B4472F;
+  --border: #DDD4BF;
+  --divider: #DDD4BF;
+  --input: #DDD4BF;
+  --ring: #D9A82E;
+  --chart-1: #D9A82E;
+  --chart-2: #5B6B3F;
+  --chart-3: #B4472F;
+  --chart-4: #8A6410;
+  --chart-5: #6E6556;
+  --sidebar: #FBF8F1;
+  --sidebar-foreground: #2B2620;
+  --sidebar-primary: #2B2620;
+  --sidebar-primary-foreground: #F4EFE2;
+  --sidebar-accent: #EAE3D2;
+  --sidebar-accent-foreground: #2B2620;
+  --sidebar-border: #DDD4BF;
+  --sidebar-ring: #D9A82E;
 }
 
 /*
@@ -95,3 +109,17 @@
  * so the inert `dark:` utilities in ui/* never match (no `.dark` is ever added
  * to the storefront DOM) rather than being stripped from every component.
  */
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.005em;
+  }
+}
